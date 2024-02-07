@@ -3,7 +3,7 @@ function findMaxConsecutiveOnes(arr, k) {
   
     for (let i = 0; i < arr.length; i++) {
       let zeroCount = 0;
-      let currentLength = 0;
+      // let currentLength = 0;
   
       for (let j = i; j < arr.length; j++) {
         if (arr[j] === 0) {
@@ -13,9 +13,12 @@ function findMaxConsecutiveOnes(arr, k) {
         if (zeroCount > k) {
           break; // Too many zeros to flip
         }
-  
-        currentLength++;
-        maxLength = Math.max(maxLength, currentLength);
+        console.log(`j = ${j} , i = ${i}`)
+
+        // currentLength++;
+        // maxLength = Math.max(maxLength, currentLength);
+              maxLength = Math.max(maxLength, j-i+1);
+
       }
     }
   
